@@ -155,8 +155,10 @@ function AdminApp() {
 
 // Main App with routing
 function App() {
+  const basename = process.env.NODE_ENV === 'production' ? '/docker-kurulmusu-var' : '';
+  
   return (
-    <Router>
+    <Router basename={basename}>
       <Routes>
         <Route path="/" element={<BootcampApp />} />
         <Route path="/admin" element={<AdminApp />} />
