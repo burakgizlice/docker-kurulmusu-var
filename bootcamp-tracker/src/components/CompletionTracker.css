@@ -1,0 +1,109 @@
+.completion-tracker {
+  position: sticky;
+  top: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: 15px;
+  margin: 2rem 0;
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+  text-align: center;
+}
+
+.completion-stats h3 {
+  margin: 0 0 1.5rem 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.stats-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #ffffff;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin-top: 0.5rem;
+}
+
+.completion-button {
+  background: #27ae60;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4);
+  min-width: 200px;
+}
+
+.completion-button:hover:not(:disabled) {
+  background: #219a52;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(39, 174, 96, 0.6);
+}
+
+.completion-button:active {
+  transform: translateY(0);
+}
+
+.completion-button.completed {
+  background: #2ecc71;
+  cursor: default;
+}
+
+.completion-button.loading {
+  background: #95a5a6;
+  cursor: not-allowed;
+}
+
+.completion-button:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+.completion-message {
+  margin-top: 1rem;
+  font-size: 1rem;
+  opacity: 0.9;
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 0.9; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .stats-grid {
+    gap: 1rem;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+  }
+  
+  .completion-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+  }
+}

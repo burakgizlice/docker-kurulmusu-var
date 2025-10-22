@@ -1,0 +1,219 @@
+.markdown-content {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 3rem;
+  line-height: 1.9;
+  font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  color: #333;
+  background: white;
+  min-height: calc(100vh - 160px);
+  box-sizing: border-box;
+}
+
+.markdown-content h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin: 2.5rem 0 2rem 0;
+  color: #2c3e50;
+  border-bottom: 4px solid #3498db;
+  padding-bottom: 0.8rem;
+  text-align: center;
+}
+
+.markdown-content h2 {
+  font-size: 2.6rem;
+  font-weight: 600;
+  margin: 2.5rem 0 1.5rem 0;
+  color: #34495e;
+  text-align: center;
+}
+
+.markdown-content h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 2rem 0 1.5rem 0;
+  color: #2c3e50;
+  text-align: left;
+}
+
+.markdown-content h4 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  font-style: italic;
+  margin: 1.5rem 0 1rem 0;
+  color: #34495e;
+  text-align: left;
+}
+
+.markdown-content p {
+  margin: 1.5rem 0;
+  font-size: 1.4rem;
+  text-align: left;
+  line-height: 1.8;
+}
+
+.markdown-content strong {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.markdown-content em {
+  font-style: italic;
+  color: #7f8c8d;
+}
+
+.markdown-content code {
+  background: #f1f2f6;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-family: 'Monaco', 'Consolas', monospace;
+  font-size: 1.2rem;
+  color: #e74c3c;
+  font-weight: 600;
+}
+
+.markdown-content ul, .markdown-content ol {
+  margin: 1.5rem 0;
+  padding-left: 2.5rem;
+  text-align: left;
+  list-style-position: outside;
+}
+
+.markdown-content li {
+  margin: 0.8rem 0;
+  font-size: 1.3rem;
+  line-height: 1.6;
+}
+
+.markdown-content blockquote {
+  background: #f8f9fa;
+  border-left: 5px solid #3498db;
+  margin: 2rem 0;
+  padding: 1.5rem 2rem;
+  font-style: italic;
+  color: #7f8c8d;
+  border-radius: 0 8px 8px 0;
+  font-size: 1.3rem;
+  text-align: left;
+}
+
+.markdown-content img {
+  max-width: 100%;
+  height: auto;
+  margin: 2rem 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.markdown-content .image-caption {
+  text-align: center;
+  font-style: italic;
+  color: #7f8c8d;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Completion Section Styles */
+.markdown-content .completion-section {
+  margin: 2.5rem 0;
+  padding: 0;
+}
+
+.markdown-content .completion-bar {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: 2px solid #dee2e6;
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.markdown-content .completion-bar:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  transform: translateY(-1px);
+}
+
+.markdown-content .completion-text {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #495057;
+  display: flex;
+  align-items: center;
+}
+
+.markdown-content .completion-text::before {
+  content: "🎯";
+  margin-right: 0.8rem;
+  font-size: 1.4rem;
+}
+
+.markdown-content .completion-btn {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(40, 167, 69, 0.3);
+}
+
+.markdown-content .completion-btn:hover {
+  background: linear-gradient(135deg, #218838 0%, #1ba085 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.4);
+}
+
+.markdown-content .completion-btn.completed {
+  background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+  box-shadow: 0 2px 6px rgba(108, 117, 125, 0.3);
+}
+
+.markdown-content .completion-btn.completed:hover {
+  background: linear-gradient(135deg, #5a6268 0%, #3d4043 100%);
+  box-shadow: 0 4px 12px rgba(108, 117, 125, 0.4);
+}
+
+.markdown-content .completion-section[data-completion-id] .completion-bar {
+  border-left: 5px solid #28a745;
+}
+
+.markdown-content .completion-btn.completed + .completion-bar,
+.markdown-content .completion-btn.completed ~ * .completion-bar {
+  border-left-color: #6c757d;
+  background: linear-gradient(135deg, #f1f3f4 0%, #e8eaed 100%);
+}
+
+/* Print-friendly styles */
+@media print {
+  .markdown-content {
+    padding: 1rem;
+    font-size: 12pt;
+    line-height: 1.6;
+  }
+  
+  .markdown-content h1 {
+    font-size: 18pt;
+    page-break-after: avoid;
+  }
+  
+  .markdown-content h2 {
+    font-size: 16pt;
+    page-break-after: avoid;
+  }
+  
+  .markdown-content h3 {
+    font-size: 14pt;
+    page-break-after: avoid;
+  }
+}
