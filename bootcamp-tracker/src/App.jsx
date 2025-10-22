@@ -64,12 +64,16 @@ function BootcampApp() {
   const goToPrevious = () => {
     if (currentModuleIndex > 0) {
       setCurrentModuleIndex(currentModuleIndex - 1);
+      // Scroll to top when navigating to previous module
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
   const goToNext = () => {
     if (currentModuleIndex < modules.length - 1) {
       setCurrentModuleIndex(currentModuleIndex + 1);
+      // Scroll to top when navigating to next module
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
@@ -112,7 +116,11 @@ function BootcampApp() {
             <button
               key={index}
               className={`page-dot ${index === currentModuleIndex ? 'active' : ''}`}
-              onClick={() => setCurrentModuleIndex(index)}
+              onClick={() => {
+                setCurrentModuleIndex(index);
+                // Scroll to top when navigating directly to a module
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
               title={modules[index].title}
             />
           ))}
