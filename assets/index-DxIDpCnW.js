@@ -1724,8 +1724,6 @@ FIREBASE: `))}restoreState_(){this.tryAuth(),this.tryAppCheck();for(const n of t
 
 ### Önce Docker'ın Çözdüğü Problemi Anlayalım: (5dk)
 
-[COMPLETE:test]
-
 Eğer daha önce herhangi bir program kodladıysanız, veyahut ileride kodlamanız gerekirse muhtemelen en başlarda hepimizin yaşadığı ortak bir problemle karşılaşacaksınız!\\
 Heyecanla kodunuzu yazdınız, tam istediğiniz gibi çalışan ve sizi mutlu eden bir programınız var diyelim. 
 
