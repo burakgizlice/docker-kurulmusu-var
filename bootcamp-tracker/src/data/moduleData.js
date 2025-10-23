@@ -570,6 +570,7 @@ Arkadaşlar, tebrikler! 4 saatlik hızlandırılmış Docker bootcamp'imizin son
 
 Unutmayın: En iyi öğrenme pratiğin ta kendisidir.
 
-Şimde sorularınız varsa, kalan zamanı onlara ayıralım! Anonim formları tekrar doldurarak bootcamp sonunda sahip olduğunuz özgüven seviyesini dürüstçe bildirirseniz memnun oluruz.`
+Şimde sorularınız varsa, kalan zamanı onlara ayıralım! Anonim formları tekrar doldurarak bootcamp sonunda sahip olduğunuz özgüven seviyesini dürüstçe bildirirseniz memnun oluruz.
+![](https://cdn-images-1.medium.com/max/979/1*2Ez8sAAK3py0o5ezLwTlLQ.png)`
   }
 ];
