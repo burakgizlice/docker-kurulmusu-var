@@ -9,14 +9,16 @@ Arkadaşlar, Modül 2'nin sonunda ne kadar zahmetli bir iş yaptığımızı hat
 Bu bir mühendislik çözümünden çok, geçici bir yama gibiydi.
 
 -   **Sorun Neydi?** Bu yöntem ne tekrarlanabilir ne de profesyoneldi. Uygulamanızda bir değişiklik yaptığınızda, her şeyi yeniden kopyalamak, silmek, durdurmak zorunda kalıyorsunuz. **Zaman kaybı!**
-
-burada bu işlemi canlı olarak uygulamamızın yeni sürümüyle gerçekleştirelim ki katılımcılarımız anlamlandırsın.
-
+-   Eğer kütüphanede yer bul uygulamamıza bir güncelleme yapsaydık, ve insanların bırakıp gittikleri defter kitaplarını ekleseydik. Her güncellemede aynı işlemi yeni kodumuz için tekrarlamak zorunda kalacaktık.
 -   **Çözüm:** Docker'a **tek bir tarif** (yani **Dockerfile**) vererek şunu demeliyiz: "Bu Nginx imajını al, bu dosyaları otomatik olarak içine koy ve sonra bu tarifi **alku_oyun_v2** adıyla kaydet." İşte bu tarif, Docker'daki otomasyonun başlangıcıdır.
 
-### 3.2 Dockerfile: İmajın Tarif Kitabı (15 dk)
+![](https://cdn-images-1.medium.com/max/979/1*4l41dki42QzjF4vLPUAtSQ.png)
+
+### 3.2 Dockerfile: İmajın Tarifi (15 dk)
 
 **Dockerfile**, Docker'ın kendi dilinde yazılmış, adım adım talimatlar içeren bir metin dosyasıdır. Tıpkı Python'daki gibi, bu talimatları sırayla okur ve uygular.
+
+![](https://cdn-images-1.medium.com/max/979/1*9004Txf8Qyys3ODgGph2ig.png)
 
 Şimdi basit bir web uygulaması için temel talimatlara ve bunların ne işe yaradığına yakından bakalım:
 
@@ -28,6 +30,8 @@ burada bu işlemi canlı olarak uygulamamızın yeni sürümüyle gerçekleştir
 > ***Ek Not (Teknik Bilgi):*** *Eğer bu bir Node.js uygulaması olsaydı,* `*COPY*` *komutundan hemen sonra* `*RUN npm install*` *gibi komutlarla gerekli bağımlılıkları* ***imaj inşa edilirken*** *kurardık. Bu, her seferinde tekrar tekrar kurmak zorunda kaldığımız durumlardan da kendimizi tamamen kurtarmak anlamına gelir.*
 
 ### 3.3 Kendi İmajımızı İnşa Etme ve Test Etme (25 dk)
+
+![](https://cdn-images-1.medium.com/max/979/1*yaDpugXY7T5zvCEmBnaZSw.png)
 
 Artık teoriyi pratiğe döküp otomasyonun tadını çıkarma zamanı!
 
@@ -43,7 +47,7 @@ COPY . .
 
 İmaj tarifimizi güzelce hazırladık, şimdi burada yazdığımız işlemleri gerçekleştirip imajımızı her yerde kullanıma hazır hale getirelim. Terminalde projenizin bulunduğu klasördeyken bu komutu çalıştırın:
 
-`docker build -t alku-oyun:v1 .`
+`docker build -t alku-kutuphane:v1 .`
 
 -   `**-t**` **(tag):** İmajımıza kolay hatırlanabilir bir isim ve versiyon (`alku-oyun:v1`) verdik.
 -   `**.**` **(nokta):** Docker'a, tarifin (`Dockerfile`'ın) **bu klasörde** olduğunu söyledik.
@@ -59,6 +63,8 @@ Artık elimizde Modül 2'deki Nginx imajı değil, **kendi inşa ettiğimiz** `*
 
 > ***SONUÇ:*** *Tebrikler!* `***docker cp***`** *ile kopyalama ve container'ın içine girip ayarlamalar yapma zahmetinden kurtuldunuz!*** *Bir sonraki modülde, bu oyuna bir arka plan servisi ekleyip* ***ağları*** *karıştırarak mühendislik seviyesini daha da artıracağız. Artık oyunumuz sadece statik değil, verileri de yönetecek!*
 
+[COMPLETE:module3-docker-image-building]
+
 ### Final: İmajı Paylaşma ve Her Yerde Kullanma (Registry Kullanımı)
 
 Arkadaşlar, şimdi `**alku-oyun:v1**` imajımız bilgisayarımızda. Peki bu tarifi **ALKÜ'deki 50 arkadaşımızla** nasıl paylaşacağız? Tekrar mail atmak mı? Hayır! **Kayıt Defterleri (Registry)** işte tam bu noktada devreye giriyor.
@@ -66,9 +72,11 @@ Arkadaşlar, şimdi `**alku-oyun:v1**` imajımız bilgisayarımızda. Peki bu ta
 Modül 1'de bahsettiğimiz o büyük yemek kitabı (Docker Hub) şimdi bizim bu hazırladığımız özel imajları kolaylıkla paylaşmamızı sağlayacak.
 
 1.  **Giriş Yapma:** İlk olarak terminalinizden Docker Hub hesabınıza giriş yapmanız gerekiyor: `docker login` *(Bu komutu verdiğinizde kullanıcı adınızı ve şifrenizi soracaktır.)*
-2.  **İmajı Etiketleme (Tagging):** Docker Hub'a yüklemek için imajımızın adını, **kullanıcı adımızla** birlikte yeniden etiketlemeliyiz (tarifin üzerine kendi adımızı yazmak gibi): `docker tag alku-oyun:v1 <kullanici_adiniz>/alku-oyun:v1` *(Örnek:* `*docker tag alku-oyun:v1 cemyilmaz/alku-oyun:v1*`*)*
+2.  **İmajı Etiketleme (Tagging):** Docker Hub'a yüklemek için imajımızın adını, **kullanıcı adımızla** birlikte yeniden etiketlemeliyiz (tarifin üzerine kendi adımızı yazmak gibi): `docker tag alku-oyun:v1 <kullanici_adiniz>/alku-oyun:v1` *(Örnek:* `*docker tag alku-oyun:v1 burakgizlice/alku-oyun:v1*`*)*
 3.  **İmajı Yükleme (Pushing):** Artık bu tarifi sunucuya gönderebiliriz! `docker push <kullanici_adiniz>/alku-oyun:v1` *(Bu, birkaç saniye veya dakika sürebilir.)*
 4.  **Sizden İstek:** Şimdi, benim yüklediğim imajı (kendi kullanıcı adımla etiketlenmiş halini) **herkesin kendi bilgisayarına çekmesini** istiyorum: `docker pull <benim_kullanici_adim>/alku-oyun:v1`
+
+[COMPLETE:module3-pulling-from-burak]
 
 #### 💡 Kritik Not: Docker Hub Her Zaman Çözüm Değil
 
@@ -77,7 +85,5 @@ Modül 1'de bahsettiğimiz o büyük yemek kitabı (Docker Hub) şimdi bizim bu 
 İşte bu noktada devreye **yerel (Local / Private) Registry'ler** giriyor. Siz, tıpkı Docker Hub gibi, ancak sadece şirket ağından erişilebilen kendi özel sunucunuzu kurarsınız. Uygulamanızı buraya yüklersiniz ve ekip arkadaşlarınıza haber verirsiniz. Onlar da herhangi bir uyumsuzluk hatası almadan, sadece:
 
 `docker pull <özel_sunucu_adresi>/<imaj_adi>`
-
-bu kısmı görselleştirip somutlaştıralım.
 
 komutunu kullanarak uygulamayı kolayca çekebilirler. Bu sayede uygulamanız hem **izole** hem de **profesyonel bir şekilde** dağıtılmış olur.
