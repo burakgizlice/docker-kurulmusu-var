@@ -1,4 +1,4 @@
-### Modül 1.5: Docker Kurulumu ve Becerilerimizi Ölçme Zamanı! (30dk)
+### Modül 1.5: Docker Kurulumu ve Anonim Değerlendirme! (30dk)
 
 > *Arkadaşlar, Modül 1'de ne kadar heyecanlı bir dünyaya adım attığımızı gördük. Şimdi sıra pratik yapmaya geldi, ancak uygulamaya geçmeden önce temel aracımız olan Docker'ı bilgisayarımızda hazır etmemiz gerekiyor.*
 
@@ -16,15 +16,13 @@
 -   **Grup B (Kurulum Gerekli):** Komut bulunamadı veya benzeri bir hata aldınız. Docker henüz sisteminizde kurulu değil.
 -   **Grup C (Sorunlular):** Komut var ama "Docker Engine çalışmıyor" veya "WSL hatası" gibi bir sorun alıyorsunuz.
 
-### 2\. Ön Değerlendirme (Anket): Başlangıç Noktamız Ne? (10 dk)
+### 2\. Ön Değerlendirme (Anonim Anket): Başlangıç Noktamız Ne? (10 dk)
 
 > *Şimdi, gruplarımız ne olursa olsun,* ***herkesin*** *doldurmasını istediğim kısa ve anonim bir ön değerlendirme formu var.*
 
-> *Bu form, kaç puan aldığınızı ölçmekten çok, bu bootcamp'e hangi konularda ne kadar güvenle başladığınızı görmek için. Dürüst olun, bu sadece bizim öğrenme hızınızı ölçmemize yardımcı olacak.*
+> *Bu form, kaç puan aldığınızı ölçmekten çok, bu bootcamp'e hangi konularda ne kadar güvenle başladığınızı görmek için. Tamamen anonimdir, hiçbir çekinceniz olmasın lütfen.*
 
-> form linki
-
->
+![](https://cdn-images-1.medium.com/max/979/1*W2n_LLwCPzc1bxLXA1KAAQ.png)
 
 -   **Grup A'daki arkadaşlar:** Siz formu doldururken biz de B ve C gruplarıyla kurulumu başlatacağız. Lütfen form bitince hemen bir sonraki **Yan Aktivite** bölümüne geçin!
 -   **Grup B ve C'deki arkadaşlar:** Lütfen siz de formu telefonunuzdan veya tarayıcınızdan doldurmaya başlayın. Formu bitirir bitirmez hemen kuruluma geçeceğiz.
@@ -60,17 +58,19 @@ Arkadaşlar, Docker'ın Windows'ta çalışması için **WSL 2 (Windows Subsyste
 Sizler anketi doldurdunuz ve hazırsınız. Sizden biraz eğlenerek Modül 2'ye hazırlanmanızı istiyorum. Bu komutlar tıpkı çitini yeni çektiğimiz köpeği çalıştırmak gibi olacak:
 
 1.  **Sistem Kontrolü:** Önce meşhur "Hello World" imajını bir çalıştırın: `docker run hello-world`
-2.  **Eğlenceli Konteyner:** Şimdi size bir **köpek balığı** göstereceğim. Bu imaj, bize terminalde komik bir köpek balığı ASCII sanatı gösterir: `docker run --rm rancher/cowsay "Docker Harika Bir Icat"`
+2.  **Eğlenceli Konteyner:** Şimdi size bir **inek** göstereceğim. Bu imaj, bize terminalde komik bir inek ASCII sanatı gösterir: `docker run --rm rancher/cowsay "Docker Harika Bir Icat"`
 3.  **Temizlik:** Ardından, Nginx'in arka planda nasıl çalıştığını görmek için:
 
 -   İlk İmajı Çekin ve Çalıştırın: `docker run -d nginx:latest`
 -   Konteyneri Görün: `docker ps`
 -   Temizleyin: `docker stop <id>` ve `docker rm <id>` komutlarını kullanarak çalıştırdığınız Nginx konteynerini sistemden temizleyin.
 
-Bunu yaparak hem meşgul kalırsınız hem de Modül 2'ye herkesten 1--0 önde başlarsınız!
+[COMPLETE:cowsay]
 
 ### 4\. Kapanış ve Ara
 
 Arkadaşlar, kurulumu tamamlayabilenler lütfen terminalde son bir doğrulama yapsın:
 
 `docker run hello-world`
+
+[COMPLETE:hello-world]

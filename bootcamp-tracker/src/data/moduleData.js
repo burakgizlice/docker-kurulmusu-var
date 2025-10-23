@@ -115,7 +115,7 @@ Hazırsanız, bir sonraki modülde hemen bu İstemci'yi kullanmaya başlayıp **
   {
     id: 'module15', 
     title: 'Modül 1.5',
-    content: `### Modül 1.5: Docker Kurulumu ve Becerilerimizi Ölçme Zamanı! (30dk)
+    content: `### Modül 1.5: Docker Kurulumu ve Anonim Değerlendirme! (30dk)
 
 > *Arkadaşlar, Modül 1'de ne kadar heyecanlı bir dünyaya adım attığımızı gördük. Şimdi sıra pratik yapmaya geldi, ancak uygulamaya geçmeden önce temel aracımız olan Docker'ı bilgisayarımızda hazır etmemiz gerekiyor.*
 
@@ -133,11 +133,13 @@ Hazırsanız, bir sonraki modülde hemen bu İstemci'yi kullanmaya başlayıp **
 -   **Grup B (Kurulum Gerekli):** Komut bulunamadı veya benzeri bir hata aldınız. Docker henüz sisteminizde kurulu değil.
 -   **Grup C (Sorunlular):** Komut var ama "Docker Engine çalışmıyor" veya "WSL hatası" gibi bir sorun alıyorsunuz.
 
-### 2\\. Ön Değerlendirme (Anket): Başlangıç Noktamız Ne? (10 dk)
+### 2\\. Ön Değerlendirme (Anonim Anket): Başlangıç Noktamız Ne? (10 dk)
 
-> *Şimde, gruplarımız ne olursa olsun,* ***herkesin*** *doldurmasını istediğim kısa ve anonim bir ön değerlendirme formu var.*
+> *Şimdi, gruplarımız ne olursa olsun,* ***herkesin*** *doldurmasını istediğim kısa ve anonim bir ön değerlendirme formu var.*
 
-> *Bu form, kaç puan aldığınızı ölçmekten çok, bu bootcamp'e hangi konularda ne kadar güvenle başladığınızı görmek için. Dürüst olun, bu sadece bizim öğrenme hızınızı ölçmemize yardımcı olacak.*
+> *Bu form, kaç puan aldığınızı ölçmekten çok, bu bootcamp'e hangi konularda ne kadar güvenle başladığınızı görmek için. Tamamen anonimdir, hiçbir çekinceniz olmasın lütfen.*
+
+![](https://cdn-images-1.medium.com/max/979/1*W2n_LLwCPzc1bxLXA1KAAQ.png)
 
 -   **Grup A'daki arkadaşlar:** Siz formu doldururken biz de B ve C gruplarıyla kurulumu başlatacağız. Lütfen form bitince hemen bir sonraki **Yan Aktivite** bölümüne geçin!
 -   **Grup B ve C'deki arkadaşlar:** Lütfen siz de formu telefonunuzdan veya tarayıcınızdan doldurmaya başlayın. Formu bitirir bitirmez hemen kuruluma geçeceğiz.
@@ -146,36 +148,49 @@ Hazırsanız, bir sonraki modülde hemen bu İstemci'yi kullanmaya başlayıp **
 
 #### 🚀 Grup B ve C: Kurulum Başlasın!
 
+Kurulum linkini paylaşıyor ve adımları hızlandırıyorum. Bu talimatları çok basit adımlara ayırdım ki, en karmaşık hata bile çözülsün:
+
 > Adım 1: İndirme (Herkes İçin Ortak)
 
-1.  **Tarayıcınızı Açın** ve **"Docker Desktop İndir"** diye aratın
+1.  **Tarayıcınızı Açın** ve **"Docker Desktop İndir"** diye aratın (veya paylaştığım linke gidin).
 2.  İşletim sisteminiz neyse (Windows, Mac), ona uygun butona tıklayıp dosyayı indirin. **Mac kullanıcıları** için iki seçenek olabilir; çipleri M1/M2/M3 olanlar "Apple Chip" olanı, diğerleri "Intel Chip" olanı seçmeli.
 
-> Adım 2: Windows İçin Can Alıcı Ayar
+> Adım 2: Windows İçin Can Alıcı Ayar (Çoğunluk İçin)
 
 Arkadaşlar, Docker'ın Windows'ta çalışması için **WSL 2 (Windows Subsystem for Linux)** adlı küçük bir Linux ortamına ihtiyacımız var. Burası **en çok hata aldığımız yer!**
 
 1.  **Komut Verin:** Terminali açın ve indirme devam ederken hemen şu komutu yazıp **Enter** yapın: \`wsl --update\`
 2.  **Yeniden Başlatma:** Kurulum bittiğinde sizden **bilgisayarı yeniden başlatmanız** istenebilir. Bu çok normal ve gerekli bir adımdır.
+3.  **Hata Kontrolü (BIOS):** Eğer kurulum size "Sanallaştırma (Virtualization) açık değil" gibi bir hata verirse, bu BIOS ayarlarınızı kontrol etmeniz gerektiği anlamına gelir. **Bu hatayı alanlar hemen el kaldırsın!**
 
 > Adım 3: Kurulumu Tamamlayın
 
-1.  İndirilen dosyayı çift tıklayın ve çıkan her şeye **"OK"** veya **"Devam Et"** deyin. 
+1.  İndirilen dosyayı çift tıklayın ve çıkan her şeye **"OK"** veya **"Devam Et"** deyin. Çoğu ayar varsayılan olarak kalabilir.
 2.  Kurulum bittiğinde, Docker sizden hesabınıza giriş yapmanızı isteyebilir. Şimdilik bu adımı **atlayabiliriz.**
+
+> ***Teknik Destek:******Grup C'deki*** *(sorunlu) ve BIOS hatası alan arkadaşlara yardım etmeleri için salondaki teknik arkadaşlarımızı yönlendirelim.*
 
 #### ✅ Grup A: Yan Aktivite ve Eğlenceli Pratik
 
-Sizler anketi doldurdunuz ve hazırsınız. Sizden biraz eğlenerek Modül 2'ye hazırlanmanızı istiyorum:
+Sizler anketi doldurdunuz ve hazırsınız. Sizden biraz eğlenerek Modül 2'ye hazırlanmanızı istiyorum. Bu komutlar tıpkı çitini yeni çektiğimiz köpeği çalıştırmak gibi olacak:
 
 1.  **Sistem Kontrolü:** Önce meşhur "Hello World" imajını bir çalıştırın: \`docker run hello-world\`
-2.  **Eğlenceli Konteyner:** \`docker run --rm rancher/cowsay "Docker Harika Bir Icat"\`
-3.  **Temizlik:** \`docker run -d nginx:latest\` → \`docker ps\` → \`docker stop <id>\` ve \`docker rm <id>\`
+2.  **Eğlenceli Konteyner:** Şimdi size bir **inek** göstereceğim. Bu imaj, bize terminalde komik bir inek ASCII sanatı gösterir: \`docker run --rm rancher/cowsay "Docker Harika Bir Icat"\`
+3.  **Temizlik:** Ardından, Nginx'in arka planda nasıl çalıştığını görmek için:
 
-[COMPLETE:module1-practical-exercises]
+-   İlk İmajı Çekin ve Çalıştırın: \`docker run -d nginx:latest\`
+-   Konteyneri Görün: \`docker ps\`
+-   Temizleyin: \`docker stop <id>\` ve \`docker rm <id>\` komutlarını kullanarak çalıştırdığınız Nginx konteynerini sistemden temizleyin.
+
+[COMPLETE:cowsay]
 
 ### 4\\. Kapanış ve Ara
 
-Kurulumu tamamlayabilenler lütfen terminalde son bir doğrulama yapsın: \`docker run hello-world\``
+Arkadaşlar, kurulumu tamamlayabilenler lütfen terminalde son bir doğrulama yapsın:
+
+\`docker run hello-world\`
+
+[COMPLETE:hello-world]`
   },
   {
     id: 'module2',
@@ -190,13 +205,27 @@ Modül 1'de Daemon'u, İmajı ve Konteyneri öğrendik. Şimdi o bilgiyi eyleme 
 
 \`docker <komut> <alt-komut> [seçenekler] [argümanlar]\`
 
+Yaygın kullanabileceğimiz bazı örnek komutlara bakalım ve komutların parça parça hangi kısımlara ait olduğunu inceleyelim.
+
+docker image ls\\
+docker image pull alpine:latest\\
+docker build -t my-app:v1 .\\
+docker image rm my-old-image\\
+docker run -d -p 8080:80 webapp:v1\\
+docker container ls -a\\
+docker logs -f <konteyner_adı_veya_id>\\
+docker stop <konteyner_adı_veya_id>\\
+docker container rm -f <konteyner_adı_veya_id>
+
 Şimdi aramızda kurulu olan, ya da kurulumu yeni biten arkadaşlarla bu komutları denemeye başlayacağız.
 
 ### 2.2 Kullan-At Konsepti: Tek Seferlik İşler için Konteyner (10 dk)
 
 Arkadaşlar, biliyorsunuz hepimiz bir projeye başlarken bir şeyi test etmek için tonla paket kurarız, sonra o paketi bir daha açmayız ve bilgisayarımızda çöp olarak kalır. Docker bu duruma son veriyor: **İşin bitince iz bırakma!**
 
-Bu konsept için **Curl** aracını kullanacağız. Curl, normalde ağ testleri yapmak için kurmanız gereken, bazen kurulumu uğraştıran bir araçtır.
+![](https://cdn-images-1.medium.com/max/979/1*YDnLw2jCLWlOr81tnxZfVQ.png)
+
+Bu konsept için **Curl** aracını kullanacağız. Curl, normalde ağ testleri yapmak için kurmanız gereken bir araçtır.
 
 -   **Komutun Sihri:** Şu komutu yazalım: \`docker run --rm curlimages/curl google.com\`
 -   **Ne Oldu?**
@@ -206,19 +235,30 @@ Bu konsept için **Curl** aracını kullanacağız. Curl, normalde ağ testleri 
 3.  Konteynerin içindeki \`curl google.com\` komutunu **çalıştırdı**.
 4.  Ve en önemlisi: \`**--rm**\` (remove) seçeneği sayesinde, işi biter bitmez konteyner **otomatik olarak kendini sildi!** Ne bir program kaldı, ne bir iz. Tertemiz! İşte **"Kurulmuşu Var!"** felsefesi budur.
 
+-   **Canlı Gösterim:** Peki rm bayrağını kullanmasak ne olurdu? docker ps ile kontrol ederek gözleyelim.
+
+[COMPLETE:module2-curl]
+
 ### 2.3 Zahmetli Kurulumlara Son: Jupyter Notebook (15 dk)
 
 Şimdi biraz daha ciddi bir araca geçelim. Aramızda veri bilimine meraklı olanlar bilir: Jupyter Notebook kurmak, Python'ı kur, üzerine Anaconda kur, bir sürü kütüphane kur... tam bir çile.
 
+![](https://cdn-images-1.medium.com/max/979/1*Em-2ILNqUAWSYRMCEt2tZQ.png)
+
 Bakın Docker'da bu iş nasıl oluyor:
 
--   **Tek Komutla Notebook Server:** \`docker run -p 8888:8888 jupyter/notebook\`
+-   **Tek Komutla Notebook Server:** \`docker run -p 8888:8888 jupyter/scipy-notebook\`
 -   **Peki Buradaki Sır Ne?**
 
-1.  \`**jupyter/notebook**\`**:** Bu devasa aracı kurmak yerine, **kurulumu tamamlanmış imajı** kullandık! Yani kısaca kurmakla uğraşma işte burada **KURULMUŞU VAR!**
+1.  \`**jupyter/notebook**\`**:** Bu aracı sıfırdan kurmak yerine, **kurulumu tamamlanmış imajı** kullandık! Yani kısaca kurmakla uğraşma işte burada **KURULMUŞU VAR!**
 2.  \`**-p 8888:8888**\` **(Port Haritalama):** Modül 4'te detayını göreceğiz ama şimdilik şunu bilin: Notebook konteynerin içinde 8888. portta çalışıyor. Bu seçenekle onu bizim bilgisayarımızın (Host OS) 8888. portuna bağlıyoruz. **Olmazsa dışarıdan erişemeyiz.**
 
+![](https://cdn-images-1.medium.com/max/979/1*jc3UqhBtSmwXNHtE3Fno9Q.png)
+
 -   **Doğrulama:** Tarayıcınızı açın ve \`**localhost:8888**\` adresine gidin. Terminalde size verilen **token'ı** kopyalayıp yapıştırarak Jupyter Notebook arayüzüne erişin. Tebrikler, kurulumsuz veri bilimine hoş geldiniz!
+-   Jupyter notebook'umuzu aktif edip print ile adımızı soyadımızı yazalım.
+
+[COMPLETE:module2-jupyter]
 
 ### 2.4 Konteyner Yaşam Döngüsünü Yönetme (15 dk)
 
@@ -234,21 +274,49 @@ Artık çalışan bir sürü konteynerimiz var (Nginx, Jupyter, belki köpek bal
 -   \`docker logs -f <id>\`: Bir konteynerin çıktılarını (hatalarını, işlemlerini) gerçek zamanlı izleme. Mühendislikte hata ayıklama için en çok kullanacağımız komut!
 -   \`docker rm <id>\`: Konteyneri kalıcı olarak siler.
 
+**Uygulama:** Hadi kendimiz de bir konteyner çalıştıralım, \`-d\` bayrağı ne işe yarıyor gözleyelim.
+
+-   \`docker run -d nginx:latest \`
+-   \`docker ps\`
+-   \`docker stop <id>\`
+-   \`docker ps -a\` 
+-   \`docker start <id>\`
+-   \`docker ps\`
+-   \`docker logs -f <id>\`
+-   \`docker rm <id>\`
+
+[COMPLETE:module2-container-lifecycle]
+
 ### 2.5 Oyun Entegrasyonu: Dosyayı Konteynere Nasıl Koyarız? (15 dk)
 
 Şimdi gelelim kendi **ALKÜ Kütüphane Oyunumuzun** statik HTML dosyasını çalıştırmaya. Biz buna **Nginx** adlı web sunucusu imajını kullanacağız.
 
-1.  **Boş Sunucuyu Kaldırma:** Nginx imajını çekip, 8080 portunu dışarıya açarak arka planda çalıştırıyoruz: \`docker run -d -p 8080:80 --name alkü_kutuphane_server nginx\`
+1.  **Boş Sunucuyu Kaldırma:** Nginx imajını çekip, 8080 portunu dışarıya açarak arka planda çalıştırıyoruz: \`docker run -d -p 8080:80 --name alkü_yer_bul nginx:latest\`
 
 -   Şimdi \`localhost:8080\`'e giderseniz Nginx'in varsayılan, boş sayfasını görmeniz gerekir.
 
-**2\\. Manuel Kopyalama (**\`**docker cp**\`**):** Normalde Modül 3'te bunu otomatik yapacağız ama **ne kadar emek harcadığımızı görmeniz için** şimdi manuel yapıyoruz:
+#### 💡 Sık Karşılaşılan Hata Notu: Adres Zaten Kullanımda!
 
--   **Ön hazırlık:** Lütfen yanınızda bulunan \`**index.html**\` (oyun dosyası) dosyasının nerede olduğunu bilin.
--   **Komut:** \`docker cp ./index.html alkü_kutuphane_server:/usr/share/nginx/html/index.html\`
--   **Ne yaptık?** \`index.html\` dosyasını \`alkü_kutuphane_server\` adlı konteynerin içindeki Nginx'in web klasörüne kopyaladık!
+Arkadaşlar, bu komutu çalıştırdığınızda \`**address already in use**\` (adres zaten kullanımda) hatası alırsanız, **panik yok!**
 
-**3\\. Sonuç:** Şimdi \`localhost:8080\` adresini yenileyin. **Tebrikler!** İlk kendi uygulamanızı bir konteynerde, tek bir komutla yayınlamış oldunuz!
+Bu, bilgisayarınızda (Host OS) 8080 numaralı kapının zaten başka bir program (belki XAMPP, belki bir Node projeniz, belki de durdurmayı unuttuğunuz eski bir Docker konteyneri) tarafından kullanıldığı anlamına gelir.
+
+**Çözüm Basit:**
+
+1.  **Önce Kontrol Edin:** Tarayıcıdan \`localhost:8080\` adresine gidip, gerçekten çalışan bir servis arayüzü olup olmadığına bakın. Belki unuttuğunuz bir sunucu açıktır.
+2.  **Farklı Port Kullanın:** En kolayı, dışarıya açtığımız portu değiştirmektir. 8080 yerine 8081, 9000 gibi başka bir port deneyin: \`docker run -d -p 8081:80 --name alkü_yer_bul nginx:latest\` 
+
+Bu küçük hile ile port karmaşasını anında çözebiliriz!
+
+-   **Manuel Kopyalama (**\`**docker cp**\`**): Klasör Kopyalama Sanatı**
+-   Normalde Modül 3'te bunu otomatik yapacağız ama **ne kadar emek harcadığımızı görmeniz için** şimdi manuel yapıyoruz. React projenizin tüm içeriğini Nginx'in sunucu klasörüne kopyalamalıyız.
+-   **Ön Hazırlık:** Lütfen QR ile indirebileceğiniz \`index.html\`, \`assets\` klasörü gibi tüm dosyaların olduğu \`**dist**\` klasörünün olduğu yere terminal ile girin.
+  Drive Linki: https://drive.google.com/file/d/1gAsIysPOZ56BYEvap8nTbpDmF-CbDqFN/view?usp=sharing
+-   **Komut:** Klasörün içindeki *tüm içeriği* kopyalamak için \`.\` (yıldız) karakterini kullanacağız.
+-   \`docker cp ./dist/. alku_yer_bul:/usr/share/nginx/html\`
+-   **Ne Yaptık?** Kendi bilgisayarımızdaki \`./dist\` klasörünün **içindeki her şeyi** (nokta koyarak), \`alkü_yer_bul_server\` adlı konteynerin içindeki Nginx'in web klasörüne (\`/usr/share/nginx/html\`) kopyaladık!
+-   **Sonuç:**
+-   Şimdi \`localhost:8080\` adresini yenileyin. **Tebrikler!** React uygulamanız (alkü Kütüphane Oyunu) an itibarıyla Docker konteyneri içinde, tek bir komutla yayınlanmış oldu!
 
 #### 💡 Ekstra Bilgi: Konteynerin İçine Girmek ve Manipülasyon
 
@@ -256,16 +324,16 @@ Arkadaşlar, bizim **ALKÜ Kütüphane Oyunu** basit bir HTML dosyasıydı. Ama 
 
 İşte bu noktada imdadımıza \`**exec**\` komutu ve Modül 2.2'de gördüğümüz sihirli \`**-it**\` bayrağı yetişiyor:
 
--   **Komut:** \`docker exec -it alkü_kutuphane_server bash\`
+-   **Komut:** \`docker exec -it alku_yer_bul bash\`
 
-Bu komutla, çalışan \`**alkü_kutuphane_server**\` konteynerinin içine **interaktif (i)** ve **sanal terminal (t)** (\`-it\`) üzerinden giriyorsunuz. Artık konteynerin içindesiniz! Tıpkı SSH ile bir sunucuya bağlanmış gibi:
+Bu komutla, çalışan \`**alkü_yer_bul**\` konteynerinin içine **interaktif (i)** ve **sanal terminal (t)** (\`-it\`) üzerinden giriyorsunuz. Artık konteynerin içindesiniz! Tıpkı SSH ile bir sunucuya bağlanmış gibi:
 
 1.  \`ls /usr/share/nginx/html\` yazarak kopyaladığınız \`index.html\` dosyasını görebilirsiniz.
 2.  Gerekiyorsa \`chmod\` komutuyla dosya izinlerini değiştirebilirsiniz.
 3.  İşiniz bitince \`exit\` yazarak konteynerden çıkarsınız.
 
 Bu yetenek, bize tam bir kontrol sağlıyor. Unutmayın, Docker sadece çalıştırmak değil, aynı zamanda **hata ayıklamak ve yönetmek** için de güçlü bir araçtır!
-
+[COMPLETE:module2-docker-it]
 Bu modülde **run, ps, stop, rm** gibi temel komutları öğrendik ve \`cp\` ile uygulamamızı zor yoldan konteynere koyduk. Bir sonraki modülde, bu manuel kopyalama zahmetini nasıl **otomatikleştireceğimizi** göreceğiz: **Dockerfile** ile!`
   },
   {
