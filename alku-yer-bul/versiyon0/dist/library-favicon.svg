@@ -1,0 +1,20 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Book spine -->
+  <rect x="6" y="4" width="20" height="24" rx="2" fill="#8B4513" stroke="#654321" stroke-width="1"/>
+  
+  <!-- Book pages -->
+  <rect x="8" y="6" width="16" height="20" rx="1" fill="#F5F5DC" stroke="#E0E0E0" stroke-width="0.5"/>
+  
+  <!-- Page lines -->
+  <line x1="10" y1="10" x2="22" y2="10" stroke="#D3D3D3" stroke-width="0.5"/>
+  <line x1="10" y1="13" x2="22" y2="13" stroke="#D3D3D3" stroke-width="0.5"/>
+  <line x1="10" y1="16" x2="22" y2="16" stroke="#D3D3D3" stroke-width="0.5"/>
+  <line x1="10" y1="19" x2="22" y2="19" stroke="#D3D3D3" stroke-width="0.5"/>
+  <line x1="10" y1="22" x2="22" y2="22" stroke="#D3D3D3" stroke-width="0.5"/>
+  
+  <!-- Book title area -->
+  <rect x="8" y="6" width="16" height="4" fill="#4A90E2" opacity="0.8"/>
+  
+  <!-- Small library symbol -->
+  <circle cx="16" cy="8" r="1" fill="white"/>
+</svg>
