@@ -1,0 +1,187 @@
+.library-container {
+  padding: 20px;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+.library-container h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+  font-family: 'Arial', sans-serif;
+}
+
+.library-floor {
+  background-color: #e8e8e8;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  position: relative;
+}
+
+/* Table Row Styles */
+.table-row {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Long Table Styles */
+.long-table {
+  width: 90%;
+  height: 120px;
+  background-color: white;
+  border: 3px solid #ddd;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  margin: 0 auto;
+}
+
+/* Glass Barrier */
+.glass-barrier {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 4px;
+  background: linear-gradient(
+    to right,
+    rgba(173, 216, 230, 0.8) 0%,
+    rgba(135, 206, 235, 0.9) 50%,
+    rgba(173, 216, 230, 0.8) 100%
+  );
+  border: 1px solid #87CEEB;
+  border-radius: 2px;
+  box-shadow: 
+    0 0 10px rgba(135, 206, 235, 0.4),
+    inset 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+/* Chair Styles */
+.chair {
+  width: 22px;
+  height: 22px;
+  background-color: #3E2723;
+  border-radius: 50% 50% 25% 25%;
+  position: absolute;
+  border: 2px solid #2E1B17;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Chair positions around long tables */
+.chair-top {
+  top: -30px;
+  transform: translateX(-50%);
+  border-radius: 25% 25% 50% 50%;
+}
+
+.chair-bottom {
+  bottom: -30px;
+  transform: translateX(-50%);
+  border-radius: 50% 50% 25% 25%;
+}
+
+/* Horizontal Walkways */
+.walkway-horizontal {
+  height: 25px;
+  background-color: #d0d0d0;
+  border-radius: 5px;
+  position: relative;
+  margin: 10px 0;
+}
+
+.walkway-horizontal::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: repeating-linear-gradient(
+    to right,
+    #999 0px,
+    #999 15px,
+    transparent 15px,
+    transparent 30px
+  );
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .library-floor {
+    padding: 20px;
+  }
+  
+  .long-table {
+    width: 95%;
+    height: 100px;
+  }
+  
+  .chair {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .chair-top {
+    top: -25px;
+  }
+  
+  .chair-bottom {
+    bottom: -25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .long-table {
+    width: 98%;
+    height: 80px;
+  }
+  
+  .chair {
+    width: 15px;
+    height: 15px;
+  }
+  
+  .library-container h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Hover effects */
+.long-table:hover {
+  background-color: #f9f9f9;
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.chair:hover {
+  background-color: #4A2C2A;
+  transform: translateX(-50%) scale(1.1);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.chair-bottom:hover {
+  transform: translateX(-50%) scale(1.1);
+}
+
+/* Glass barrier hover effect */
+.glass-barrier:hover {
+  background: linear-gradient(
+    to right,
+    rgba(135, 206, 235, 1) 0%,
+    rgba(100, 149, 237, 1) 50%,
+    rgba(135, 206, 235, 1) 100%
+  );
+  box-shadow: 
+    0 0 15px rgba(135, 206, 235, 0.6),
+    inset 0 0 8px rgba(255, 255, 255, 0.5);
+}
