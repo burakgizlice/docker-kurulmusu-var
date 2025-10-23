@@ -374,7 +374,8 @@ Bu bir mühendislik çözümünden çok, geçici bir yama gibiydi.
 
 ![](https://cdn-images-1.medium.com/max/979/1*yaDpugXY7T5zvCEmBnaZSw.png)
 
-Artık teoriyi pratiğe döküp otomasyonun tadını çıkarma zamanı!
+Artık teoriyi pratiğe dökme zamanı!
+Dosya Linki: https://drive.google.com/file/d/1rkkE8MtUabB8BiAqNhO1HPS7LwOZXHz5/view?usp=sharing
 
 **Adım 1: Dockerfile Oluşturma**
 
