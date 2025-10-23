@@ -2,33 +2,46 @@
 
 ### Önce Docker'ın Çözdüğü Problemi Anlayalım: (5dk)
 
-Eğer daha önce herhangi bir program kodladıysanız, veyahut ileride kodlamanız gerekirse muhtemelen en başlarda hepimizin yaşadığı ortak bir problemle karşılaşacaksınız!\
+Eğer daha önce herhangi bir program kodladıysanız, veyahut ileride kodlamanız gerekirse muhtemelen en başlarda hepimizin yaşadığı ortak bir problemle karşılaşacaksınız!
+
+![](https://cdn-images-1.medium.com/max/979/1*rlI3TBoSLP9VHObvXEpl-w.png)
+
 Heyecanla kodunuzu yazdınız, tam istediğiniz gibi çalışan ve sizi mutlu eden bir programınız var diyelim. 
+
+![](https://cdn-images-1.medium.com/max/979/1*ldWOqi1LXaQBNvogoxrK3g.png)
 
 Örneğin benim geliştirdiğim ALKÜ Kütüphanesinde yer bulmak oyunu!
 
-Bu programı arkadaşlarıma da gönderip onların da oynamalarını istiyorum, sizler de takım arkadaşlarınız için kıymetli ve kritik işlevsel programlar yazıp bunu onlara kullanmaya başlamaları için göndermek istiyor ve hatta göndermek zorunda olabilirsiniz.
+Bu programı arkadaşlarıma da gönderip onların da oynamalarını istiyorum farz edelim, sizler de takım arkadaşlarınız için kıymetli ve kritik işlevsel programlar yazıp bunu onlara kullanmaya başlamaları için göndermek istiyor ve hatta göndermek zorunda olabilirsiniz.
 
-Programınızı bir şekilde paketleyip arkadaşlarınıza veya herhangi birine yolladığınızda başınıza gelecek şey arkadaşınızın size bu çalışmıyor demesidir!
+Programınızı bir şekilde paketleyip arkadaşlarınıza veya herhangi birine yolladığınızda başınıza gelecek şey muhtemelen arkadaşınızın size bu çalışmıyor demesidir!
+
+![](https://cdn-images-1.medium.com/max/979/1*LQ_Iooj1LlC9Bp4Ocs23hg.png)
 
 Bir yazılım çalışmak için şu üç şeye muhtaçtır:\
-- Kaynak koduna (yazdığımız ALKÜ Kütüphane'de Yer Bul oyunu)\
-- Doğru Bağımlılıklara (Python, Node, kütüphaneler)\
-- Doğru Ortama (İşletim sistemi, ortam değişkenleri)
+- Kaynak koduna (yazdığımız ALKÜ Kütüphane'de Yer Bul oyunu) 👨‍💻\
+- Doğru Bağımlılıklara (Python, Node, kütüphaneler) 🐍\
+- Doğru Ortama (İşletim sistemi, ortam değişkenleri) 🍏🪟🐧
 
 Muhtemelen arkadaşınız kendi bilgisayarında yüklü olmayan veya erişilemeyen bir kütüphane, veya sürüm uyuşmazlıkları gibi sebeplerle hatalar alacak.
 
 Çünkü onun bilgisayarından tam olarak sizinkiyle aynı durumda olmasını bekleyemezsiniz.
 
-Docker, kodu, bağımlılıkları ve ortamı tek b ir standart taşınabilir birimde paketleyerek bu sorunu çözer. Yabancı kaynaklarda bu sorunu "It Works on My Machine!" olarak da görebilirsiniz. Docker'ı anlayıp kullanmaya başlamak yalnızca yazdığınız programları güzelce paketlemekte değil, uzun ve yorucu kurulum süreçlerini de rahatlatma konusunda size epey yardımcı olacak. 
+Docker, kodu, bağımlılıkları ve ortamı tek bir standart taşınabilir birimde paketleyerek bu sorunu çözer.
+
+![](https://cdn-images-1.medium.com/max/979/1*oBfikdlf6qyPpCuygxQQdA.png)
+
+Yabancı kaynaklarda bu sorunu "It Works on My Machine!" olarak da görebilirsiniz. Docker'ı anlayıp kullanmaya başlamak yalnızca yazdığınız programları güzelce paketlemekte değil, uzun ve yorucu kurulum süreçlerini de rahatlatma konusunda size epey yardımcı olacak. 
 
 ### Konteynerler vs. Sanal Makineler: Fark Ne? (10dk)
 
 Peki bu "standart taşınabilir birim" tam olarak nedir? Çoğumuzun bildiği bir teknoloji var: **Sanal Makineler (VM)**. Docker'ı anlamak için önce VM'in ne yaptığını, sonra da Docker'ın nasıl farklılaştığını görelim.
 
+![](https://cdn-images-1.medium.com/max/979/1*hWYgaLw745AvWhUmyFganw.png)
+
 #### Sanal Makineler (VM): Köpeğiniz İçin Bambaşka Bir Ev 🏡
 
--   **Analoji:** Sanal Makine (VM), **uygulamanız olan köpeğiniz için bambaşka, sıfır bir ev inşa etmek gibidir**. Bu evin kendi işletim sistemi, kendi donanımı vardır ve köpeğiniz orada canının istediği her şeyi yapabilir.
+-   **Analoji:** Sanal Makine (VM), **uygulamanız olan köpeğiniz için bambaşka, sıfır bir ev inşa etmek gibidir**. Bu evin kendi işletim sistemi, kendi donanımı vardır ve köpeğiniz orada canının istediği her şeyi yapabilir.f
 -   **Ağırlığı:** VM, uygulamanızın (köpeğinizin) yanında, **bütün bir işletim sistemini, çekirdeği (kernel) ve donanım emülasyonunu** da taşır. Bu yüzden **ağırdır, yavaş başlar** ve aşırı kaynak tüketir. Yazdığımız programı çalıştırmak için koca bir eve ihtiyacımız yok!
 
 #### Konteynerler: Köpeğin Evinizin Bahçesinde Çiti 🚧
@@ -36,6 +49,8 @@ Peki bu "standart taşınabilir birim" tam olarak nedir? Çoğumuzun bildiği bi
 -   **Analoji:** Docker Konteyneri ise **uygulamanız olan köpeğinizin evinize (Ana İşletim Sisteminize) zarar vermemesi için sağlam bir çit çekmek gibidir**. Köpeğiniz (uygulamanız) o çitin içinde istediğini yapar ama **sizin evinizin (OS'inizin)** düzenini bozamaz.
 -   **Teknik Fark:** Bir konteyner **donanımı sanallaştırmaz**. Ana işletim sistemi (Host OS) ile **aynı çekirdek (kernel) üzerinde çalışır**. Sadece diğer konteynerlerden ve ana sistemden **izolasyon** sağlar. Yani VM'deki gibi ağır bir yük yoktur.
 -   **Temel Çıkarım:** Konteynerler **saniyeler içinde** başlar, **çok hafiftir** ve yalnızca uygulamanızın çalışması için gerekli minimum kaynağı kullanır. Amacımız sadece uygulamamızı izole etmek ve taşınabilir kılmak; bunun için yeni bir ev inşa etmeye gerek yok!
+
+![](https://cdn-images-1.medium.com/max/979/1*9004Txf8Qyys3ODgGph2ig.png)
 
 #### 💡 Detaylı Teknik Bilgi: Çitin Sırrı (`cgroups` ve `namespaces`)
 
@@ -52,15 +67,21 @@ Arkadaşlar, mühendislik gözüyle bakarsak, konteynerler sihir değil; Linux'u
 
 #### 1\. İmaj (Image) 🖼️: Orijinal Yemek Tarifi
 
+![](https://cdn-images-1.medium.com/max/979/1*697m-ulcpMAPxgLwvFyhsQ.png)
+
 -   **Nedir?** İmaj, uygulamanızın, tüm bağımlılıklarının ve ayarlarının **salt okunur (read-only)** bir şablonudur. Tıpkı bir .ISO dosyası gibi düşünebilirsiniz. **Statiktir**, bir kez oluşturulur ve değişmez.
 -   **Benzetme:** Bu, bizim **ALKÜ Kütüphane Oyunu'nun tam ve kesin tarifi** demektir. Hangi ReactJS sürümünü, hangi kütüphaneyi kullanacağının bilgisi içeridedir.
 
 #### 2\. Konteyner (Container) ⚙️: Pişmiş Yemek
 
+![](https://cdn-images-1.medium.com/max/979/1*nhKgOrJJqsTYsVfUoAyP0Q.png)
+
 -   **Nedir?** Konteyner, bir imajın **canlı, çalışan örneğidir**. İmajı çalıştırdığınız anda konteyner oluşur. İmaj bir kez hazırlanır, ama ondan binlerce konteyner çalıştırabilirsiniz.
 -   **Farkı:** İmaj statikken, konteyner **dinamiktir** ve bir durumu (state) olabilir. İçindeki dosyaları değiştirebilir, log üretebilirsiniz (ancak bu veriler genellikle kalıcı değildir, 5. modülde kalıcı hale getireceğiz!).
 
 #### 3\. Kayıt Defteri (Registry) ☁️: Büyük Yemek Kitabı
+
+![](https://cdn-images-1.medium.com/max/979/1*bNhTArOJGFzSW0Dsy-qKXQ.png)
 
 -   **Nedir?** İmajların depolandığı ve paylaşıldığı merkezi bir depodur. En meşhuru, tüm dünyanın kullandığı **Docker Hub**'dır.
 -   **Akış:** Bizim ekip ALKÜ Kütüphane Oyunu'nun **İmajını** hazırlar, sonra bu İmajı **Kayıt Defterine** yükler. Sizin makineniz de o İmajı **çeker (pull)** ve **çalıştırarak** bir **Konteyner** oluşturur.
@@ -74,6 +95,8 @@ Docker, çok basit bir **İstemci-Sunucu** mimarisi üzerinde çalışır:
 
 1.  **Docker Daemon (Sunucu/Motor):** Bu, bilgisayarınızın arka planında sürekli çalışan ana hizmettir. Konteynerleri oluşturan, imajları depolayan, ağları yöneten ve ağır işi yapan *motor* budur. Tüm işi o yapar.
 2.  **Docker İstemcisi (CLI):** Bu, sizin terminalden yazdığınız `docker run` gibi komutlardır. İstemci, bu komutu alır ve Daemon'a gönderir.
+
+![](https://cdn-images-1.medium.com/max/979/1*rX41Zz1Bgoj_WltFR48ODQ.png)
 
 **Yani süreç şu:** Siz **İstemci'ye** (CLI) bir emir verirsiniz, o da arka planda çalışan **Daemon'a** bu isteği iletir. Daemon da sizin için gerekli İmajı çeker ve Konteyneri ayağa kaldırır.
 
