@@ -4,6 +4,9 @@ export const modules = [
     title: 'Modül 1',
     content: `### **Modül 1 --- Hoşgeldiniz, Nedir bu Docker?**
 
+Bu bağlantı ile bootcampimizle alakalı tüm dosyaları takip edebilirsiniz: https://github.com/burakgizlice/docker-kurulmusu-var
+Çalışmamızı taktir etmek isterseniz repository'i yıldızlayabilirsiniz! ⭐
+
 ### Önce Docker'ın Çözdüğü Problemi Anlayalım: (5dk)
 
 Eğer daha önce herhangi bir program kodladıysanız, veyahut ileride kodlamanız gerekirse muhtemelen en başlarda hepimizin yaşadığı ortak bir problemle karşılaşacaksınız!
